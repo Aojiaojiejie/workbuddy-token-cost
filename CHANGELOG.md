@@ -3,6 +3,14 @@
 本文件格式遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [Unreleased]
+
+### Changed
+
+- README 明确适用模型范围：内置价表仅覆盖 DeepSeek 系列，统计其他模型时 token 用量准确
+  但费用折算不准确；补充说明 WorkBuddy 按积分计费，工具给出的金额是等效 API 成本，
+  不等于实际支出。其他模型定价将随后续版本补充。
+
 ## [5.0.1] - 2026-11-25
 
 开源前的整理与加固版本。功能与 5.0.0 一致，不改变计价口径。

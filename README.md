@@ -6,6 +6,15 @@
 ![费用看板](docs/images/dashboard.png)
 
 > 非官方工具，与 WorkBuddy、DeepSeek 无隶属或背书关系。费用为估算值，最终以官方账单为准。
+>
+> **适用范围**：内置价表只覆盖 DeepSeek 系列（开发者日常使用 `deepseek-v4.1-flash`，
+> 价格数据也仅针对该系列采集与校验）。统计其他模型时，**token 用量准确，费用折算不准确**——
+> 程序会把非 DeepSeek 模型的 token 按 DeepSeek 价格估算，得到的金额不能用于成本判断。
+> 其他模型的定价将随后续版本补充。
+>
+> WorkBuddy 本身按**积分**计费，并不直接按 API 单价扣费。这里的人民币数字是把 token
+> 折算成等效 API 成本，用于横向比较和用量感知，不是你的实际支出，也不对应任何账单。
+> 定价与用量数据仅供参考。
 
 ## 功能特性
 
@@ -138,6 +147,11 @@ WorkBuddyTokenCost_CLI.exe --once --offline --json out.json
 - 默认只统计 flash 系列（`deepseek-flash`、`deepseek-v4.1-flash`、`deepseek-v4-flash`、
   `deepseek-v4-flash-vision-exp`）；其他模型默认排除并在报表中列出。
 - 联网时会校验官网价格结构（闲时:高峰 = 1:2、数值为正且递增），校验失败即回落内置表。
+- **价表只覆盖 DeepSeek 系列**：开发者日常使用 `deepseek-v4.1-flash` 开发与验证，只有该系列
+  有采集并校验过的价格。纳入其他模型时 token 计数正常，金额却会按 DeepSeek 价格折算，
+  仅能作量级参考，不能当作实际成本。
+- **积分与费用不是一回事**：WorkBuddy 按积分结算，本工具给出的是等效 API 成本，
+  不是账单金额。把两者直接对比会得到错误结论。
 
 ### 数据与隐私
 
