@@ -1,0 +1,4 @@
+# Runtime dependency.
+# Qt Widgets only: the "PySide6" meta-package also pulls Addons/WebEngine,
+# which this application does not use.
+PySide6-Essentials==6.12.0

@@ -1,0 +1,47 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+build/
+dist/
+
+# ---- PyInstaller intermediates (specs themselves are tracked) ----
+build_cli/
+build_gui/
+*.manifest
+
+# ---- Local WorkBuddy data / private notes ----
+# Contains conversation memory, real session titles and local paths.
+.workbuddy/
+
+# Icon iterations plus the original screenshots that contain real session
+# titles. Never commit this directory; docs/images holds synthetic captures.
+assets/design/
+
+# ---- Secrets ----
+.env
+.env.*
+*.pem
+*.key
+
+# ---- App output ----
+token_cost_*.csv
+token_cost_*.json
+exports/
+demo-data/
+
+# ---- Logs / temp ----
+*.log
+*.tmp
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "workbuddy-token-cost"
+version = "5.0.1"
+description = "Read-only token usage and cost dashboard for WorkBuddy sessions"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Aojiaojiejie" }]
+keywords = ["workbuddy", "tokens", "cost", "dashboard", "pyside6", "deepseek"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "PySide6-Essentials>=6.6,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pillow>=10",
+    "pyinstaller>=6",
+    "pytest>=8",
+    "pyflakes>=3",
+]
+
+[project.scripts]
+workbuddy-token-cost = "token_cost:main"
+
+[project.gui-scripts]
+workbuddy-token-cost-gui = "gui_app:main"
+
+[tool.setuptools]
+py-modules = ["token_cost", "gui_app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.pyflakes]
+exclude = [".venv", "build", "dist"]
